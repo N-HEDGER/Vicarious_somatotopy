@@ -1,0 +1,75 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Output from Jupyter or IPython
+*.out
+*.log
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python virtual environments and package files
+*.egg-info/
+*.egg
+*.whl
+pip-log.txt
+
+# Distribution / packaging
+build/
+dist/
+*.deb
+*.tar.gz
+*.manifest
+*.spec
+
+# PyInstaller
+*.spec
+*.pyz
+*.pyc
+*.pyo
+*.pyd
+__pyinstaller__/
+
+# Jupyter Notebook Configuration
+.jupyter/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# PyCharm specific files
+*.iml
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+*.pid
+*.gz
+*.orig
+
+# Ignore environment.yml files (if not needed)
+environment.yml
+
+# Avoid ignoring all yml files
+# Feel free to comment out the line above if you want to keep your environment files versioned

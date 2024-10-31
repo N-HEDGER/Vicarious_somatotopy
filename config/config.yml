@@ -1,0 +1,478 @@
+paths:
+    in_base: "/tank/shared/2019/visual/hcp_{experiment}/" # Where are the HCP data stored?
+    out_base: "/tank/hedger/DATA/STRIATUM_prf" # Where do you want the model fits to be output?
+    plot_out: "/tank/hedger/scripts/Vicarious_somatotopy/results" # Where do you want the plots to be output?
+
+dm:
+    modalities: ["visual", "somato"] # The modality names that define the bands in the design matrix
+    with_mean: True # Whether to standardize the data with mean
+    with_std: True # Or SD
+
+patches:
+    visual:
+        roilabs: ["V1"] # V1
+        laplacians: 200 # Number of laplacians to calculate
+        vars2splice: ["eccentricity", "angle"] # Variables to splice
+    somato:
+        roilabs: ["3b"] # S1
+        laplacians: 200
+        vars2splice: ["inflated_dist"] # Medial - Lateral S1 location
+
+source_regions:
+    source_region_dir: "/tank/hedger/scripts/Sensorium/data" # Where are the source regions stored?
+    pcx_sub: "hcp_999999" # The name of the pycortex subject for using their surfaces.
+    subsurface_wildcard: "{modality}_subsurface.pickle"
+    surftype: "sphere" # The type of surface from which to make the laplacians
+    maskwcard: "{modality}_{hem}_mask.csv" # Wildcards for the masks
+    surfwcard: "{modality}_subsurface.pickle" # Wildcards for premade subsurfaces
+    lookupwcard: "{modality}_lookup.csv" # Wildcards for the lookups
+    maskdir: "masks" # Where are the masks stored?
+    lookupdir: "lookups" # Where are the lookups stored?
+    surfdir: "surfaces" # Where are the surfaces stored?
+
+output:
+    varsinframe: ["train_scores", "test_scores", "best_alphas"] # Variable names to save in the output
+    out_cifti_wildcard: "{param}.nii" # Wildcard for the cifti outputs
+    out_csv_wildcard: "params.csv" # Wildcard for the csv outputs
+    save_yhat: False # Whether to save the predicted values
+    alphaname: "best_alphas" # The name of the alpha variable
+    train_scorename: "train_scores" # The name of the training score variable
+    test_scorename: "test_scores" # The name of the test score variable
+    spliced_paramname: "spliced_params" # The prefix to give to the spliced parameters
+    npy: True # Whether to save the outputs as numpy arrays
+    out_npy_wildcard: "{param}.npy" # Wildcard for the numpy outputs
+
+modeling:
+    backend_engine: "torch" # The backend engine for the modeling
+    solver: "random_search" # The solver for the modeling
+    n_iter: 20 # The number of iterations for the solver
+    n_targets_batch: 400 # The number of targets to fit at once
+    n_alphas_batch: 10 # The number of alphas to fit at once
+    n_targets_batch_refit: 400 # The number of targets to refit at once
+    alpha_min: 1 # The minimum alpha value
+    alpha_max: 20 # The maximum alpha value
+    alpha_vals: 20 # The number of alpha values
+
+splicing:
+    dot_product: [False, True] # Whether to splice via dot product or peak of the profile
+    pos_only: [True, True] # Whether to splice only positive values
+    regress_out_mean: True # Whether to regress out the mean
+
+aggregate_subjects:
+    agg_subs: ["subsplit_1", "subsplit_2", "movsplit_1", "movsplit_2"] # The names of the splits
+    agg_path: "/tank/hedger/DATA/HCP_temp"
+    movsplit_runs:
+        movsplit_1: [1, 2]
+        movsplit_2: [3, 4]
+    sub_split1_subs:
+        [
+            100610,
+            169444,
+            177140,
+            191336,
+            203418,
+            221319,
+            395756,
+            463040,
+            833249,
+            927359,
+            995174,
+            111514,
+            169747,
+            177645,
+            182436,
+            191841,
+            233326,
+            283543,
+            397760,
+            467351,
+            573249,
+            654552,
+            783462,
+            899885,
+            114823,
+            128935,
+            146432,
+            165436,
+            177746,
+            199655,
+            205220,
+            239136,
+            401422,
+            581450,
+            671855,
+            789373,
+            861456,
+            115017,
+            146735,
+            158035,
+            167036,
+            178142,
+            192641,
+            209228,
+            246133,
+            320826,
+            541943,
+            601127,
+            680957,
+            757764,
+            814649,
+            901442,
+            115825,
+            137128,
+            146937,
+            158136,
+            167440,
+            173334,
+            186949,
+            212419,
+            249947,
+            385046,
+            412528,
+            617748,
+            818859,
+            958976,
+            108323,
+            159239,
+            169040,
+            187345,
+            195041,
+            200614,
+            251833,
+            429040,
+            550439,
+            627549,
+            770352,
+            878776,
+            144226,
+            162935,
+            176542,
+            191033,
+            352738,
+            562345,
+            826353,
+            878877,
+            926862,
+        ]
+    sub_split2_subs:
+        [
+            125525,
+            132118,
+            145834,
+            155938,
+            164131,
+            181232,
+            197348,
+            263436,
+            360030,
+            572045,
+            644246,
+            725751,
+            782561,
+            898176,
+            102311,
+            126426,
+            134627,
+            146129,
+            156334,
+            164636,
+            198653,
+            204521,
+            365343,
+            732243,
+            859671,
+            942658,
+            102816,
+            134829,
+            157336,
+            171633,
+            182739,
+            192439,
+            318637,
+            380036,
+            525541,
+            751550,
+            901139,
+            943862,
+            104416,
+            130114,
+            135124,
+            172130,
+            185442,
+            200210,
+            381038,
+            406836,
+            871762,
+            105923,
+            130518,
+            178243,
+            193845,
+            200311,
+            330324,
+            547046,
+            690152,
+            765864,
+            872764,
+            905147,
+            116726,
+            131217,
+            140117,
+            148133,
+            175237,
+            178647,
+            214019,
+            346137,
+            389357,
+            706040,
+            825048,
+            910241,
+            966975,
+            109123,
+            118225,
+            131722,
+            150423,
+            169343,
+            180533,
+            196144,
+            201515,
+            214524,
+            257845,
+            393247,
+            436845,
+            638049,
+            724446,
+            771354,
+            971160,
+        ]
+
+extra:
+    vertsperhem: 59292
+    curtail_V1: True
+    minimum_R2: .2
+    maximum_eccentricity: 8
+
+sequences:
+    nohuman_sequence:
+        movienum: 2
+        start: 650
+        end: 790
+    human_sequence:
+        movienum: 0
+        start: 527
+        end: 667
+
+agg:
+    bot_wildcard: "bot_{participant}.csv"
+    mid_wildcard: "mid_{participant}.csv"
+    top_wildcard: "top_{participant}.csv"
+    vars2wavagg:
+        [
+            ["best_alphas_best_alphas", "x", "y"],
+            ["spliced_params_inflated_dist_somato"],
+        ]
+    vars2avagg: [["test_scores_visual_score"], ["test_scores_somato_score"]]
+    weightvar: ["test_scores_visual_score", "test_scores_somato_score"]
+    out_csv_wildcard: "{name}.csv"
+
+experiments:
+    movie:
+        wc_exp: "MOVIE"
+        runs: [1, 2, 3, 4]
+        test_duration: 103
+        run_durations: [921, 918, 915, 901]
+        data_file_wildcard: "tfMRI_{experiment_id}{run}_*_Atlas_1.6mm_MSMAll_hp2000_clean.dtseries_sg_psc.nii"
+    rs:
+        wc_exp: "REST"
+        runs: [1, 2, 3, 4]
+        test_duration: 103
+        run_durations: [900, 900, 900, 900]
+        data_file_wildcard: "rfMRI_{experiment_id}{run}_*_Atlas_1.6mm_MSMAll_hp2000_clean.dtseries_sg_psc.nii"
+    ret:
+        wc_exp: "RET"
+        runs: ["BAR1", "BAR2", "CON", "EXP", "CW", "CCW"]
+        test_duration: 0
+        run_durations: [300, 300, 300, 300, 300, 300]
+        data_file_wildcard: "tfMRI_{experiment_id}{run}_*_Atlas_1.6mm_MSMAll_hp2000_clean.dtseries_sg_psc.nii"
+
+analysis:
+    average_subject: "999999"
+    full_data_subjects:
+        [
+            100610,
+            125525,
+            132118,
+            145834,
+            155938,
+            164131,
+            169444,
+            177140,
+            181232,
+            191336,
+            197348,
+            203418,
+            221319,
+            263436,
+            360030,
+            395756,
+            463040,
+            572045,
+            644246,
+            725751,
+            782561,
+            833249,
+            898176,
+            927359,
+            995174,
+            102311,
+            111514,
+            126426,
+            134627,
+            146129,
+            156334,
+            164636,
+            169747,
+            177645,
+            182436,
+            191841,
+            198653,
+            204521,
+            233326,
+            283543,
+            365343,
+            397760,
+            467351,
+            573249,
+            654552,
+            732243,
+            783462,
+            859671,
+            899885,
+            942658,
+            102816,
+            114823,
+            128935,
+            134829,
+            146432,
+            157336,
+            165436,
+            171633,
+            177746,
+            182739,
+            192439,
+            199655,
+            205220,
+            239136,
+            318637,
+            380036,
+            401422,
+            525541,
+            581450,
+            671855,
+            751550,
+            789373,
+            861456,
+            901139,
+            943862,
+            104416,
+            115017,
+            130114,
+            135124,
+            146735,
+            158035,
+            167036,
+            172130,
+            178142,
+            185442,
+            192641,
+            200210,
+            209228,
+            246133,
+            320826,
+            381038,
+            406836,
+            541943,
+            601127,
+            680957,
+            757764,
+            814649,
+            871762,
+            901442,
+            105923,
+            115825,
+            130518,
+            137128,
+            146937,
+            158136,
+            167440,
+            173334,
+            178243,
+            186949,
+            193845,
+            200311,
+            212419,
+            249947,
+            330324,
+            385046,
+            412528,
+            547046,
+            617748,
+            690152,
+            765864,
+            818859,
+            872764,
+            905147,
+            958976,
+            108323,
+            116726,
+            131217,
+            140117,
+            148133,
+            159239,
+            169040,
+            175237,
+            178647,
+            187345,
+            195041,
+            200614,
+            214019,
+            251833,
+            346137,
+            389357,
+            429040,
+            550439,
+            627549,
+            706040,
+            770352,
+            825048,
+            878776,
+            910241,
+            966975,
+            109123,
+            118225,
+            131722,
+            144226,
+            150423,
+            162935,
+            169343,
+            176542,
+            180533,
+            191033,
+            196144,
+            201515,
+            214524,
+            257845,
+            352738,
+            393247,
+            436845,
+            562345,
+            638049,
+            724446,
+            771354,
+            826353,
+            878877,
+            926862,
+            971160,
+        ]
+    sg_filter_window_length: 201
+    sg_filter_polyorder: 3
+    TR: 1.0

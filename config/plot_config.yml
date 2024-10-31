@@ -1,0 +1,209 @@
+plotviews:
+  rest_bmap:
+    x: 6
+    y: 3
+    vmin: 42
+    vmax: 62
+    vmin2: 2
+    vmax2: 5
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["Medial", "Parietal", "Frontal", "Operculum-insula"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
+    dashes_list: [[0, 0], [0, 0], [0, 0], [0, 0]]
+    linewidth_list: [10, 10, 10, 10]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  difference:
+    x: 6
+    y: 3
+    vmin: -7
+    vmax: 7
+    vmin2: 0
+    vmax2: 5
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    xlab: "t (rest-movie)"
+    ylab: "t (Movie)"
+    outname: "difference.png"
+    ROIS:
+      [
+        "Medial",
+        "Parietal",
+        "Frontal",
+        "Operculum-insula",
+        "BIG_LATERAL",
+        "BIG_VENTRAL",
+        "Wang_occipital",
+        "Wang_dorsal",
+      ]
+    col_list:
+      [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+      ]
+    dashes_list:
+      [[0, 0], [0, 0], [0, 0], [0, 0], [20, 9], [20, 9], [20, 9], [20, 9]]
+    linewidth_list: [10, 10, 10, 10, 10, 10, 10, 10]
+    dpi: 300
+
+  variance_decomp_full:
+    x: 6
+    y: 3
+    vmin: 0
+    vmax: .4
+    vmin2: 0
+    vmax2: .4
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "PU_RdBu_covar_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "variance_decomp.png"
+    xlab: "Visual R2"
+    ylab: "Somato R2"
+    var1: "test_scores_visual_score"
+    var2: "test_scores_somato_score"
+    ROIS:
+      [
+        "Medial",
+        "Parietal",
+        "Frontal",
+        "Operculum-insula",
+        "BIG_LATERAL",
+        "BIG_VENTRAL",
+        "Wang_occipital",
+        "Wang_dorsal",
+      ]
+    col_list:
+      [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+      ]
+    dashes_list:
+      [[0, 0], [0, 0], [0, 0], [0, 0], [20, 9], [20, 9], [20, 9], [20, 9]]
+    linewidth_list: [10, 10, 10, 10, 10, 10, 10, 10]
+    dpi: 300
+
+  av_bmap_zoom:
+    x: 6
+    y: 3
+    zoomrect: [-170, 170, -90, 180]
+    labelsize: 10
+    vmin: 42
+    vmax: 62
+    vmin2: 0
+    vmax2: .4
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    var1: "spliced_params_inflated_dist_somato"
+    var2: "test_scores_somato_score"
+    xlab: "Bodymap Value"
+    ylab: "Somato R2"
+    outname: "av_bmap_zoom.png"
+    ROIS:
+      [
+        "FFA",
+        "FBA",
+        "EBA",
+        "PPA",
+        "V3A",
+        "V3B",
+        "IPS0",
+        "IPS1",
+        "IPS2",
+        "IPS3",
+        "IPS4",
+        "IPS5",
+        "LO1",
+      ]
+    col_list:
+      [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+      ]
+    dashes_list:
+      [
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+      ]
+    linewidth_list: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+    dpi: 300
+  dstat_som_rest:
+    x: 6
+    y: 3
+    vmin: 0
+    vmax: .6
+    vmin2: 0
+    vmax2: .2
+    dpi: 600
+    linewidth_list: [10, 10, 10, 10]
+    labelsize: 60
+    subject: "hcp_999999_draw_NH"
+    cmap: "fire_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    ROIS: ["Medial", "Parietal", "Frontal", "Operculum-insula"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
+    xlab: "d"
+    ylab: "t"
+    dashes_list: [[0, 0], [0, 0], [0, 0], [0, 0]]
