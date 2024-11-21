@@ -2,6 +2,9 @@ paths:
     in_base: "/tank/shared/2019/visual/hcp_{experiment}/" # Where are the HCP data stored?
     out_base: "/tank/hedger/DATA/STRIATUM_prf" # Where do you want the model fits to be output?
     plot_out: "/tank/hedger/scripts/Vicarious_somatotopy/results" # Where do you want the plots to be output?
+    resource_base: "/tank/hedger/scripts/Sensorium/data/outputs" # Where are the resources stored?
+    other_out: "/tank/hedger/scripts/Vicarious_somatotopy/results/other" # Where do you want the other outputs to be stored?
+    atlas_file: "/tank/hedger/scripts/Vicarious_somatotopy/data/ROIS_ATLASES.csv"
 
 dm:
     modalities: ["visual", "somato"] # The modality names that define the bands in the design matrix
