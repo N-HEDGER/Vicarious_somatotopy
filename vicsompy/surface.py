@@ -66,9 +66,9 @@ class Subsurface(object):
 
         # Get the whole-brain indices for those vertices contained in the subsurface.
         self.subsurface_verts_L = np.where(self.subsurface_L.subsurface_vertex_map != stats.mode(
-            self.subsurface_L.subsurface_vertex_map)[0][0])[0]
+            self.subsurface_L.subsurface_vertex_map)[0])[0]
         self.subsurface_verts_R = np.where(self.subsurface_R.subsurface_vertex_map != stats.mode(
-            self.subsurface_R.subsurface_vertex_map)[0][0])[0]+self.subsurface_L.subsurface_vertex_map.shape[-1]
+            self.subsurface_R.subsurface_vertex_map)[0])[0]+self.subsurface_L.subsurface_vertex_map.shape[-1]
 
         self.dangling_vertex_mask_L = self.subsurface_L.subsurface_vertex_mask[
             self.boolmasks[0]]
@@ -279,8 +279,8 @@ class CiftiHandler(object):
         # rdat=dat[self.surf_left.shape[-1]:]
         emptsub = np.zeros(self.subcortex.shape[:-1])
 
-        empt = np.zeros(self.data.shape[-1])
-        test_dat = np.array(range(self.data.shape[-1]))
+        empt = np.zeros(self.data.shape[-1]).astype('float')
+        test_dat = np.array(range(self.data.shape[-1])).astype('float')
         split_testdat = self.decompose_data(test_dat)
 
         subc = emptsub[self.vox_indices]

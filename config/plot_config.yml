@@ -23,6 +23,278 @@ plotviews:
     xlab: "Bodymap value"
     ylab: "t"
 
+  face_area_L_bmap:
+    zoomrect: [-160, -100, 70, 130]
+    x: 6
+    y: 3
+    vmin: 42
+    vmax: 62
+    vmin2: 0
+    vmax2: .4
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["LIPv", "VIP", "LIPd", "MIP","AIP","7PC","7AL","hV4","face_area"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1,0.7529, 0.7961]]
+    dashes_list: [[4, 4], [4, 4], [4, 4], [4, 4], [4, 4],[4, 4],[4, 4],[4, 4],[0, 0]]
+    linewidth_list: [2, 2, 2, 2,2,2,2,2,3]
+    xlab: "Bodymap value"
+    ylab: "t"
+  
+  
+
+  face_area_R_bmap:
+    zoomrect: [140, 200, 40, 105]
+    x: 6
+    y: 3
+    vmin: 42
+    vmax: 62
+    vmin2: 0
+    vmax2: .4
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["LIPv", "VIP", "LIPd", "MIP","AIP","7PC","7AL","hV4","face_area"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1,0.7529, 0.7961]]
+    dashes_list: [[4, 4], [4, 4], [4, 4], [4, 4], [4, 4],[4, 4],[4, 4],[4, 4],[0, 0]]
+    linewidth_list: [2, 2, 2, 2,2,2,2,2,3]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  face_area_L:
+    zoomrect: [-160, -100, 70, 130]
+    x: 6
+    y: 3
+    vmin: 1
+    vmax: 1.8
+    vmin2: 0
+    vmax2: 1
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "mako_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["LIPv", "VIP", "LIPd", "MIP","AIP","7PC","7AL","hV4","face_area"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1,0.7529, 0.7961]]
+    dashes_list: [[4, 4], [4, 4], [4, 4], [4, 4], [4, 4],[4, 4],[4, 4],[4, 4],[0, 0]]
+    linewidth_list: [2, 2, 2, 2,2,2,2,2,3]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  face_area_R:
+    zoomrect: [140, 200, 40, 105]
+    x: 6
+    y: 3
+    vmin: 1
+    vmax: 1.8
+    vmin2: 0
+    vmax2: 1
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "mako_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["LIPv", "VIP", "LIPd", "MIP","AIP","7PC","7AL","hV4","face_area"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1,0.7529, 0.7961]]
+    dashes_list: [[4, 4], [4, 4], [4, 4], [4, 4], [4, 4],[4, 4],[4, 4],[4, 4],[0, 0]]
+    linewidth_list: [2, 2, 2, 2,2,2,2,2,3]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  face_area_L_sums:
+    zoomrect: [-160, -100, 70, 130]
+    x: 6
+    y: 3
+    vmin: 70
+    vmax: 160
+    vmin2: 70
+    vmax2: 71
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["face_area"]
+    col_list: [[1,0.7529, 0.7961]]
+    dashes_list: [[0, 0]]
+    linewidth_list: [3]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  face_area_R_sums:
+    zoomrect: [140, 200, 40, 105]
+    x: 6
+    y: 3
+    vmin: 70
+    vmax: 160
+    vmin2: 70
+    vmax2: 71
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["face_area"]
+    col_list: [[1,0.7529, 0.7961]]
+    dashes_list: [[0, 0]]
+    linewidth_list: [3]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  face_area_L_visom:
+    zoomrect: [-160, -100, 70, 130]
+    x: 6
+    y: 3
+    vmin: 2
+    vmax: 7
+    vmin2: 2
+    vmax2: 7
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "PU_RdBu_covar_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["LIPv", "VIP", "LIPd", "MIP","AIP","7PC","7AL","hV4","face_area"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1,0.7529, 0.7961]]
+    dashes_list: [[4, 4], [4, 4], [4, 4], [4, 4], [4, 4],[4, 4],[4, 4],[4, 4],[0, 0]]
+    linewidth_list: [2, 2, 2, 2,2,2,2,2,3]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  face_area_R_visom:
+    zoomrect: [140, 200, 40, 105]
+    x: 6
+    y: 3
+    vmin: 2
+    vmax: 7
+    vmin2: 2
+    vmax2: 7
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "PU_RdBu_covar_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["LIPv", "VIP", "LIPd", "MIP","AIP","7PC","7AL","hV4","face_area"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1,0.7529, 0.7961]]
+    dashes_list: [[4, 4], [4, 4], [4, 4], [4, 4], [4, 4],[4, 4],[4, 4],[4, 4],[0, 0]]
+    linewidth_list: [2, 2, 2, 2,2,2,2,2,3]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  bin_mask_rest:
+    x: 6
+    y: 3
+    vmin: 0
+    vmax: 1
+    vmin2: 0
+    vmax2: 1
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "plasma_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["Medial", "Parietal", "Frontal", "Operculum-insula"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]]
+    dashes_list: [[0, 0], [0, 0], [0, 0], [0, 0]]
+    linewidth_list: [10, 10, 10, 10]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  bin_mask_mov:
+    x: 6
+    y: 3
+    vmin: 0
+    vmax: 1
+    vmin2: 0
+    vmax2: 1
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "plasma_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    xlab: "Bodymap value"
+    ylab: "t"
+
+  vis_som:
+    x: 6
+    y: 3
+    vmin: 42
+    vmax: 62
+    vmin2: 2
+    vmax2: 5
+    dpi: 300
+    labelsize: 10
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    outname: "rest_bmap.png"
+    ROIS: ["Medial", "Parietal", "Frontal", "Operculum-insula","WANG_V1","WANG_V2","WANG_V3","hV4",'LO1']
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1],[1, 1, 1]]
+    dashes_list: [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0],[0, 0],[0, 0],[0, 0],[0, 0]]
+    linewidth_list: [10, 10, 10, 10,10,10,10,10,10]
+    xlab: "Bodymap value"
+    ylab: "t"
+
+
+
   difference:
     x: 6
     y: 3
@@ -67,6 +339,7 @@ plotviews:
       [[0, 0], [0, 0], [0, 0], [0, 0], [20, 9], [20, 9], [20, 9], [20, 9]]
     linewidth_list: [10, 10, 10, 10, 10, 10, 10, 10]
     dpi: 300
+
 
   variance_decomp_full:
     x: 6
@@ -114,6 +387,86 @@ plotviews:
       [[0, 0], [0, 0], [0, 0], [0, 0], [20, 9], [20, 9], [20, 9], [20, 9]]
     linewidth_list: [10, 10, 10, 10, 10, 10, 10, 10]
     dpi: 300
+
+  joint_subset_HCPthresh:
+    x: 6
+    y: 3
+    zoomrect: [-300, 300, -80, 150]
+    labelsize: 10
+    vmin: 70
+    vmax: 160
+    vmin2: 70
+    vmax2: 71
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    outpath: "/tank/hedger/DATA/STRIATUM_prf/outputs/plots/Figure2/flat"
+    var1: "spliced_params_inflated_dist_somato"
+    var2: "test_scores_somato_score"
+    xlab: "Bodymap Value"
+    ylab: "Somato R2"
+    outname: "av_bmap_zoom.png"
+    dpi: 300
+    ROIS:
+      [ "VISPATH_1n",
+        "VISPATH_2",
+        "VISPATH_3",
+        "VISPATH_4_n",
+        "VISPATH_5",
+        "VISPATH_6n",
+        "VISPATH_7",
+        "VISPATH_8",
+        "VISPATH_1_R",
+        "VISPATH_2_R",
+        "VISPATH_3_R",
+        "VISPATH_4_R",
+        "VISPATH_5_R",
+        "VISPATH_6_R",
+        "VISPATH_7_R",
+        "VISPATH_8_R"]
+    col_list:
+      [[1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+      ]
+    dashes_list:
+      [ [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0],
+        [0, 0]
+      ]
+    linewidth_list:
+      [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
+    
+
 
   av_bmap_zoom:
     x: 6
@@ -207,3 +560,61 @@ plotviews:
     xlab: "d"
     ylab: "t"
     dashes_list: [[0, 0], [0, 0], [0, 0], [0, 0]]
+
+  
+  size_vis:
+    x: 6
+    y: 3
+    vmin: 0
+    vmax: 25
+    vmin2: 0
+    vmax2: 1
+    dpi: 600
+    linewidth_list: [10, 10, 10, 10,10,10]
+    labelsize: 60
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    ROIS: ["WANG_V1","WANG_V2","WANG_V3","hV4","IPS0","LO1"]
+    col_list: [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],[1, 1, 1],[1, 1, 1]]
+    xlab: "d"
+    ylab: "t"
+    dashes_list: [[0, 0], [0, 0], [0, 0], [0, 0],[0, 0],[0, 0]]
+
+
+  size_som:
+    x: 6
+    y: 3
+    vmin: 0
+    vmax: 60
+    vmin2: 0
+    vmax2: 1
+    dpi: 600
+    labelsize: 60
+    subject: "hcp_999999_draw_NH"
+    cmap: "nipy_spectral_alpha"
+    with_labels: False
+    with_rois: False
+    with_colorbar: False
+    with_curvature: True
+    ROIS: ["Medial", "Parietal", "Frontal", "Operculum-insula", "VISPATH_1n",
+        "VISPATH_2",
+        "VISPATH_3",
+        "VISPATH_4_n",
+        "VISPATH_5",
+        "VISPATH_6n",
+        "VISPATH_7",
+        "VISPATH_8",
+        "VISPATH_1_R",
+        "VISPATH_2_R",
+        "VISPATH_3_R",
+        "VISPATH_4_R",
+        "VISPATH_5_R",
+        "VISPATH_6_R",
+        "VISPATH_7_R",
+        "VISPATH_8_R"]
+    xlab: "d"
+    ylab: "t"

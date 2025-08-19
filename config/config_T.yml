@@ -7,7 +7,7 @@ paths:
     atlas_file: "/tank/hedger/scripts/Vicarious_somatotopy/data/ROIS_ATLASES.csv"
 
 dm:
-    modalities: ["visual", "somato"] # The modality names that define the bands in the design matrix
+    modalities: ["visual", "T_field"] # The modality names that define the bands in the design matrix
     with_mean: True # Whether to standardize the data with mean
     with_std: True # Or SD
 
@@ -16,9 +16,9 @@ patches:
         roilabs: ["V1"] # V1
         laplacians: 200 # Number of laplacians to calculate
         vars2splice: ["eccentricity", "angle"] # Variables to splice
-    somato:
-        roilabs: ["3b"] # S1
-        laplacians: 200
+    T_field:
+        roilabs: ["T_field"] # S1
+        laplacians: 70
         vars2splice: ["inflated_dist"] # Medial - Lateral S1 location
 
 source_regions:
@@ -48,10 +48,10 @@ output:
 modeling:
     backend_engine: "torch" # The backend engine for the modeling
     solver: "random_search" # The solver for the modeling
-    n_iter: 20 # The number of iterations for the solver
-    n_targets_batch: 400 # The number of targets to fit at once
+    n_iter: 10 # The number of iterations for the solver
+    n_targets_batch: 200 # The number of targets to fit at once
     n_alphas_batch: 10 # The number of alphas to fit at once
-    n_targets_batch_refit: 400 # The number of targets to refit at once
+    n_targets_batch_refit: 200 # The number of targets to refit at once
     alpha_min: 1 # The minimum alpha value
     alpha_max: 20 # The maximum alpha value
     alpha_vals: 20 # The number of alpha values
@@ -60,6 +60,15 @@ splicing:
     dot_product: [False, True] # Whether to splice via dot product or peak of the profile
     pos_only: [True, True] # Whether to splice only positive values
     regress_out_mean: True # Whether to regress out the mean
+
+AOT:
+    base_dir: "/tank/shared/2024/visual/AOT/derivatives/glmsingle"
+    data_wildcard: "{version}/{sub}_ses-{ses}_T1W_nordicstc_{resolution}/{type}/{metric}.nii.gz"
+    out_dir: "/tank/hedger/DATA/AOT/surface_betas/"
+    gii_suffix: ".func.gii"
+    sphere_dir: "/tank/hedger/DATA/HCP_temp/Resources"
+    sphere_wcard: "_{hem}.surf.gii"
+    template_command: "wb_command -metric-resample {in_data} {in_sphere} {out_sphere} BARYCENTRIC {out_data}"
 
 aggregate_subjects:
     agg_subs: ["subsplit_1", "subsplit_2", "movsplit_1", "movsplit_2"] # The names of the splits

@@ -73,7 +73,7 @@ class Plot(object):
             self.labcol_list = [[1, 1, 1]]*len(self.ROIS)
 
         if not hasattr(self, 'linewidth_list') and hasattr(self, 'ROIS'):
-            self.linewidth_list = [10]*len(self.ROIS)
+            self.linewidth_list = [5]*len(self.ROIS)
 
         if not hasattr(self, 'dashes_list') and hasattr(self, 'ROIS'):
             self.dashes_list = [[0, 0]]*len(self.ROIS)
@@ -92,9 +92,9 @@ class Plot(object):
 
         figure = plt.figure(figsize=(self.x, self.y), dpi=self.dpi)
 
-        if 'rdat' in kwargs and 'gdat' in kwargs and 'bdat' in kwargs and 'dat2' in kwargs:
+        if 'rdat' in kwargs and 'gdat' in kwargs and 'bdat' in kwargs:
             vx = cortex.VertexRGB(
-                self.rdat, self.gdat, self.bdat, alpha=self.dat2, subject=self.subject)
+                self.rdat, self.gdat, self.bdat, subject=self.subject)
 
         elif 'dat2' not in kwargs:
             alpha = False
@@ -117,11 +117,14 @@ class Plot(object):
                                                         roi_list=[v], linecolor=self.col_list[c], dashes=self.dashes_list[c], labelcolor=self.labcol_list[c], linewidth=self.linewidth_list[c], labelsize=self.labelsize, **self.roidict)
 
         if 'zoomrect' in self.__dict__:
-            plt.axis(self.zoomrect)
+            if 'fig' in self.flatdict.keys():
+                self.flatdict['fig'].axis(self.zoomrect)
+            else:
+                plt.axis(self.zoomrect)
 
         return self.fig
 
-    def saveout(self):
-
-        self.fig.savefig(os.path.join(
-            self.outpath, self.outname), dpi=self.dpi)
+    def saveout(self, outloc=None):
+        save_path = outloc if outloc else os.path.join(
+            self.outpath, self.outname)
+        self.fig.savefig(save_path, dpi=self.dpi)
