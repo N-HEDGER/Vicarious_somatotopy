@@ -74,9 +74,9 @@ The expected installation time, inclusive of donwloads and package installation 
 
 - The main notebook that drives the main analysis is in: **_notebooks/HCP Fitting_**.📘
 
-Additional notebooks are in **_notebooks/revised_**.
-
 - Cortical flatmaps for each of the figures are produced in **_notebooks/Aggregate Plot_** and output to **_results_** folder. 📘
+
+Additional notebooks are in **_notebooks/revised_**.
 
 ## 📁 Configuration files ⚙
 
