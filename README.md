@@ -52,7 +52,7 @@ source_regions:
 
 ### Example data
 
-Example data (HCP average subject) can be found [here](https://drive.google.com/file/d/1UfIa56XztejOLhSlQ_foFI_tAUFdhj4P/view?usp=sharing) . This directory can be put inside the directory you define in _in_base_ in the yaml file described above. This will then allow you to run the following inside **_notebooks/HCP Fitting_** . Himalaya leverages tqdm and so will include a progress bar to indicate how long to expect for model fitting.
+Example data (HCP average subject) can be found [here](https://drive.google.com/file/d/110OutjDUsOfIbTjJYHBH9Q2P_a0ZmnJw/view?usp=sharing) (broken link now fixed). This directory can be put inside the directory you define in _in_base_ in the yaml file described above. This will then allow you to run the following inside **_notebooks/HCP Fitting_** . Himalaya leverages tqdm and so will include a progress bar to indicate how long to expect for model fitting.
 
 ```python
 av_fit=analyse_subject('movie','999999',analysis_name='TEST')
